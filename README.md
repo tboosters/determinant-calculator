@@ -17,7 +17,7 @@
 ## Instructions:
 1. Enter the dimension ```n``` of the ```n```x```n``` determinant
 2. Enter the elements row by row (seperate them with spaces ```'\n'```)
-	2a. If erroneuos input is detected, please key in the WHOLE ROW again
+	1. If erroneuos input is detected, please key in the WHOLE ROW again
 3. Both the determinant and the value will be printed on the screen
 4. Press 'Return' to exit the program
 
