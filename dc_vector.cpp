@@ -42,30 +42,26 @@ float dc(int n, vector< vector<float> > d){
 
 	if(n == 1){
 		det = d[0][0];
-		return det;
-	};
-	if(n == 2){
-		det = d[0][0]*d[1][1]-d[0][1]*d[1][0];
-		return det;
-	};
-
-	for(int c = 0; c < n; c++){  //using first row to find coherent
-		int y = 0, x = 0;
-		for(int i = 1; i < n; i++){
-			for(int j = 0; j < n; j++){
-				if(j != c){
-					next[y][x] = d[i][j];
-					x++;
+	}else{
+		//build coherent matrix for each element in first row, then add up the resulting determinants
+		for(int c = 0; c < n; c++){
+			int y = 0, x = 0;
+			for(int i = 1; i < n; i++){
+				for(int j = 0; j < n; j++){
+					if(j != c){
+						next[y][x] = d[i][j];
+						x++;
+					};
 				};
+				y++;
+				x = 0;
 			};
-			y++;
-			x = 0;
+			if(c%2 == 0){
+				det += d[0][c] * dc(n-1, next);
+			}else{
+				det -= d[0][c] * dc(n-1, next);
+			};	
 		};
-		if(c%2 == 0){
-			det += d[0][c] * dc(n-1, next);
-		}else{
-			det -= d[0][c] * dc(n-1, next);
-		};	
 	};
 	return det;
 };
