@@ -1,4 +1,4 @@
-# Determinant Calculator v1.0
+# Determinant Calculator v1.01
 
 ## Contents:
  - Main program
@@ -31,5 +31,10 @@ then returned for further manipulation.
 the error-prone pointers, "vector" class is introduced to carry the user-defined matrices for its
 automatic memory allocation property.
 
+## Updates
+ - v1.01
+  - Simplified base case of recursion logic
+  - Simplified structure of recursion function
+
 ## Language Used and Tested Environment:
-C++ (compiled with MinGW G++), Windows 10 on Intel i5 with 4GB RAM
+C++ (compiled with CLang++ with MinGW G++), Windows 10 on Intel i5 with 4GB RAM
